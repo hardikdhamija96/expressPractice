@@ -31,3 +31,8 @@ app.get("/", (req, res) => {
 //path.resolve(__dirname) -> gives current directories path
 //res.send -> to send response
 //res.sendFile -> to send file as response
+
+// ADD Multiple routes
+app.get("/about", (req, res) => {
+    res.sendFile(path.resolve(__dirname) + "/about.html");
+  });
