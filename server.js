@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require('path');
+const { title } = require("process");
 
 const app = express();
 
@@ -38,4 +39,27 @@ app.listen(PORT, () => {
 //   });
 
 // static files like these static html pages can be added using app.use, it requires static file directory
-app.use(express.static('public'))
+// app.use(express.static('public'))
+
+// File download in express
+app.get("/download",(req,res)=>{
+    res.download(path.resolve(__dirname)+ "/public" + "/logoDesign.jpg");
+})
+
+//but this was static HTML For Dynamic HTML we can use template engine: EJS
+
+app.set("view engine", "ejs");
+console.log(app.get("view engine"));
+
+// get files in view folder 
+app.get("/",(req,res)=>{
+    res.render("index",{
+        title:"Home page",
+    });
+})
+
+app.get("/about",(req,res)=>{
+    res.render("about",{
+        title:"about ejs"
+    });
+})
