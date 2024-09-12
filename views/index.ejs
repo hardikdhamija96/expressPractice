@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <%- include("../partials/headMeta.ejs"); %>
     <title><%= title %></title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include("../partials/nav.ejs") %>
-    <h1>This is ejs html file for server!</h1>
-    <a href="/download"><button type="button">Download File</button></a>
-</body>
+    <div class="container mt-4">
+      <h1>This is ejs html file for server!</h1>
+      <a href="/download"><button type="button">Download File</button></a>
+    </div>
+  </body>
 </html>
